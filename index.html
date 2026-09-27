@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nulloader | Script Hub</title>
+    <style>
+        body {
+            background-color: #0b0b10;
+            color: #e0e0e0;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #a855f7;
+        }
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+        .card {
+            background-color: #12121a;
+            border: 1px solid #2a2a3c;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #c084fc;
+        }
+        pre {
+            background-color: #050508;
+            border: 1px solid #1f1f2e;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+            color: #38bdf8;
+            font-size: 13px;
+        }
+        button, a.btn {
+            background-color: #7e22ce;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 13px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        button:hover, a.btn:hover {
+            background-color: #9333ea;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>nulloader Script Hub</h1>
+
+        <!-- Script Card Example -->
+        <div class="card">
+            <h3>Main Script</h3>
+            <pre id="loader1">loadstring(game:HttpGet("https://nulloader.github.io/Scripts/main.lua"))()</pre>
+            <button onclick="copyCode('loader1')">Copy Loader</button>
+            <a href="main.lua" class="btn" target="_blank">View Raw File</a>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Loader copied to clipboard!");
+            });
+        }
+    </script>
+</body>
+</html>
